@@ -173,6 +173,11 @@ namespace LiveLogViewer.FileMonitor
 
                 var baseStream = _streamReader.BaseStream;
                 
+                if (!_fileExists)
+                {
+                    return;
+                }
+
                 if (baseStream.Position > _fileInfo.Length)
                 {
                     // File is smaller than the current position, 
